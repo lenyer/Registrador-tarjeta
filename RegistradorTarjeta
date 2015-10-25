@@ -1,0 +1,130 @@
+import java.util.Scanner;
+
+public class RegistradorTarjeta
+{
+    private long numTarjeta;
+    private int numVerificador;
+    private String nombreTarjeta;
+    private int dia, mes, anio;
+    private long cantidadAPagar;
+
+    public RegistradorTarjeta ( )
+    {
+    	this( 0l, 0, " ", 0, 0, 0, 0l );
+    }
+
+    public RegistradorTarjeta( long numTarjeta, int numVerificador, String nombreTarjeta, int dia, int mes, int anio, long cantidadAPagar )
+    {
+        this.numTarjeta = numTarjeta;
+        this.numVerificador = numVerificador;
+        this.nombreTarjeta = nombreTarjeta;
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+        this.cantidadAPagar = cantidadAPagar;
+    }
+
+    public RegistradorTarjeta( RegistradorTarjeta rt )
+    {
+        this( rt.numTarjeta, rt.numVerificador, rt.nombreTarjeta, rt.dia, rt.mes, rt.anio, rt.cantidadAPagar );
+    }
+
+    public void leer ( String s )
+    {
+        Scanner sc = new Scanner( System.in );
+        s = sc.nextLine( );
+    }
+ 
+    public void leer ( int i )
+    {
+        Scanner sc = new Scanner( System.in );
+        i = sc.nextInt( );
+    }
+
+    public void leer ( long l )
+    {
+        Scanner sc = new Scanner( System.in );
+        l = sc.nexLong( );
+    }
+
+    public void setNumTarjeta( )
+    {
+        System.out.println( "Ingrese el numero de su tarjeta" )
+        leer( numTarjeta );
+    }
+
+    public long getNumTarjeta( )
+    {
+        return numTarjeta;
+    }
+
+    public void setNumVerificador( )
+    {
+        System.out.println( "Ingrese el codigo de verificacion de su tarjeta" );
+        leer( numVerificador );
+    }
+
+    public int getNumVerificador( )
+    {
+        return numVerificador;
+    }
+
+    public void setNombreTarjeta( )
+    {
+        System.out.println( "Ingrese el nombre que se encuentra en su tarjeta de credito" )
+        leer( nombreTarjeta );
+    }
+
+    public String getNombreTarjeta( )
+    {
+        return nombreTarjeta;
+    }
+
+    public void setFecha( )
+    {
+        System.out.println( " Ingrese la fecha de expiracion de su tarjeta" );
+        System.out.println( "Ingrese el dia" );
+        leer( dia );
+        System.out.println( "Ingrese el mes" );
+        leer( mes );
+        System.out.println( "Ingrese el año" );
+        leer( anio );
+    }
+
+    public int getDia( )
+    {
+        return dia;
+    }
+
+    public int getMes( )
+    {
+        return mes;
+    }
+
+    public int getAnio( )
+    {
+        return anio;
+    }
+
+    public void setPago( )
+    {
+        ;
+    }
+
+    public void getPago( )
+    {
+        return cantidadAPagar;
+    }
+
+    public void destruir( )
+    {
+        this.numTarjeta = 0l;
+        this.numVerificador = 0;
+        this.nombreTarjeta = "";
+        this.dia = 0;
+        this.mes = 0;
+        this.anio = 0;
+        this.cantidadAPagar = 0l;
+        System.gc( );
+    }
+}
